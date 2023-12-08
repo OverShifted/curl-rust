@@ -3456,7 +3456,7 @@ impl<H> Easy2<H> {
         }
     }
 
-    fn getopt_long(&self, opt: curl_sys::CURLINFO) -> Result<c_long, Error> {
+    pub fn getopt_long(&self, opt: curl_sys::CURLINFO) -> Result<c_long, Error> {
         unsafe {
             let mut p = 0;
             let rc = curl_sys::curl_easy_getinfo(self.inner.handle, opt, &mut p);
